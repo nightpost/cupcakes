@@ -1,0 +1,46 @@
+/*Main column settings*/
+@mixin cup-col-main($br-top, $br-right, $br-bottom, $br-left, $padd) {
+	border-radius: $br-top $br-right $br-bottom $br-left;
+	padding: $padd;
+}
+
+/*Column's site*/
+@mixin col-height($per) {
+	height: $per;
+}
+
+/*svg settings*/
+@mixin svg-share($width, $height) {
+	width: $width;
+	height: $height;
+}
+
+/*mobile*/
+@mixin mobile-look-svg($by-margin, $by-move-left, $by-svg-move-left, $mode-svg-width) {
+	#by {
+		margin: $by-margin;
+		left: $by-move-left;
+	}
+
+	#by svg {
+		left: $by-svg-move-left;
+	}
+
+	#mode svg {
+		width: $mode-svg-width;
+	}
+}
+
+@mixin mobile-photo-fix($img-min-width, $img-min-height) {
+	.fill img {
+		min-width: $img-min-width;
+		min-height: $img-min-height;
+	}
+}
+
+@mixin mobile-cup-column($margin-left, $margin-right) {
+	div.cup-column {
+		margin-left: $margin-left;
+		margin-right: $margin-right;
+	}
+}

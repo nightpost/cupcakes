@@ -1,0 +1,187 @@
+@import '_variables.scss';
+@import '_mixins.scss';
+@import '_typography.scss';
+
+
+/*Main settings*/
+html, body {
+	margin: 0 auto;
+	padding: 0 auto;
+}
+
+div.cup-column {
+	height: $cup-col-height;
+	margin: $cup-col-margin;
+}
+
+body {
+	background-color: $color-background;
+}
+
+.cake {
+	margin: 5vh 0;
+}
+
+@media(max-width: 768px) {
+	.cake {
+		margin: 0;
+	}
+}
+
+
+/*Main column settings*/
+.cup-column div[id] {
+	@include cup-col-main(8px, 8px, 8px, 8px, 30px);
+	border: $cup-col-main-border $color-cup-border;
+	background-color: $color-cup-background;
+}
+
+@media(max-width: 768px) {
+	.cup-column div{
+		margin: 0 5%;
+	}
+}
+
+.cup-column:first-child div:first-child {
+	@include cup-col-main(8px, 8px, 0, 0, 0);
+	border-bottom: 0;
+}
+
+.cup-column:first-child div:last-child {
+	@include cup-col-main(0, 0, 8px, 8px, 20px);
+	border-top: 0;
+}
+
+.cup-column:last-child div:last-child {
+	padding: 0;
+}
+
+
+/*Update Image*/
+.fill {
+	display:flex;
+	justify-content:center;
+	align-items:center;
+	overflow:hidden;
+}
+
+.fill img {
+	flex-grow: 1;
+	flex-shrink: 1;
+	min-width: 80%;
+	min-height: 100%;
+}
+
+
+/*Give push*/
+.push {
+	height: $push-power;
+	line-height: $push-power;
+}
+
+
+/*Column's site*/
+/*Main Photo*/
+#main-photo {
+	@include col-height(70%);
+}
+
+/*Title*/
+#main-title {
+	@include col-height(30%);
+}
+
+/*Ingridients*/
+#ingridients {
+	@include col-height(75%);
+}
+
+/*Mode*/
+#mode {
+	@include col-height(20%);
+	padding: 15px;
+}
+
+/*Preparation*/
+#preparation {
+  @include col-height(100%);
+}
+
+/*Nutritional Information*/
+#nutritional {
+  @include col-height(63%);
+}
+
+/*Video image settings*/
+#video-section {
+  @include col-height(32%);
+}
+
+
+/*svg settings*/
+#by {
+	@include svg-share(inherit, 15px);
+	border: 0;
+	position: relative;
+	top: -12px;
+	left: -20px;
+}
+
+#by h4{
+	color: $color-by-text;
+}
+
+#by svg {
+	@include svg-share(90px, 50px);
+	position: relative;
+	top: -60px;
+	left: 120px;
+}
+
+#mode svg {
+	@include svg-share(225px, 100px);
+}
+
+
+/*Table settings*/
+table {
+  margin: 3rem 0;
+}
+
+td {
+	border-bottom: $table-ordinary-devider;
+	padding: 8px 0!important;
+}
+
+table tr:first-child {
+  border-top: $table-upper-bottom-border;
+}
+
+table tr:last-child {
+  border-bottom: $table-upper-bottom-border;
+}
+
+
+/*mobile*/
+@media(min-width: 990px) and (max-width: 1200px) {
+	@include mobile-look-svg(inherit, inherit, 150px, 250px);
+}
+
+@media(min-width: 768px) and (max-width: 989px) {
+	@include mobile-look-svg(inherit, inherit, 200px, 300px);
+}
+
+@media(min-width: 630px) and (max-width: 767px) {
+	@include mobile-cup-column(20%, 20%);
+	@include mobile-look-svg(0, -17px, 170px, 290px);
+	@include mobile-photo-fix(85%, 100%);
+}
+
+@media(min-width: 500px) and (max-width: 640px) {
+	@include mobile-cup-column(15%, 15%);
+	@include mobile-look-svg(0, -17px, 160px, 275px);
+}
+
+@media(max-width: 420px) {
+	@include mobile-look-svg(0, -17px, 130px, 270px);
+}

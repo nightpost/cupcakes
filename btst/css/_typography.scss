@@ -1,0 +1,76 @@
+@import url(https://fonts.googleapis.com/css?family=Merriweather);
+@font-face {
+    font-family: 'Bariol';
+    src: url('../resources/Bariol-Regular.eot');
+    src: url('../resources/Bariol-Regular.eot?#iefix') format('embedded-opentype'),
+         url('../resources/Bariol-Regular.woff2') format('woff2'),
+         url('../resources/Bariol-Regular.woff') format('woff'),
+         url('../resources/Bariol-Regular.ttf') format('truetype'),
+         url('../resources/Bariol-Regular.svg#bariol') format('svg');
+}
+
+
+//var
+$header-main-font-size: 30px;
+$body-font-size: 13px;
+
+
+/*typography*/
+body {
+  font-family: $body-font;
+  font-size: $body-font-size;
+  font-weight: 400;
+  line-height: 1.5;
+}
+
+h1, h2, h3, h4, h5, h6, p, ul, tr, td {
+  margin-top: 0;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  font-family: $headlines-font;
+  margin-bottom: 1rem;
+  line-height: 1.1;
+  color: $headlines-color;
+}
+
+h1 {
+  font-size: $header-main-font-size;
+}
+
+h2 {
+  font-size: ($header-main-font-size * 0.75);
+}
+
+h3 {
+  font-size: ($header-main-font-size * 0.6);
+}
+
+h4 {
+  font-size: ($header-main-font-size * 0.5);
+}
+
+#by h4{
+  font-family: $body-font-size;
+  line-height: $body-font-size;
+}
+
+p, ul, tr {
+  font-size: $body-font-size;
+  line-height: 2.4;
+  margin: 1.5rem 0;
+}
+
+
+/*mobile typo*/
+@media(min-width: 415px) and (max-width: 989px) {
+  body, p, ul, text {
+    font-size: 120%;
+  }
+}
+
+@media(min-width: 400px) and (max-width: 420px) {
+  p, ul {
+    font-size: 110%;
+  }
+}
